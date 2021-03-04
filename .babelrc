@@ -1,0 +1,6 @@
+{
+    "presets": [
+        "@babel/preset-env", // es6 into commonjs
+        "@babel/preset-react" // how to deal with jsx properly
+    ]
+}
