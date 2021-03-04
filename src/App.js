@@ -1,9 +1,10 @@
 import React from "react";
 import { hot } from 'react-hot-loader'; // enables hot reload
+import TodoList from './components/TodoList';
 
 const App  = () => (
     <div className="App">
-        <h1>This is a React App!!!</h1>
+        <TodoList />
     </div>
 );
 
