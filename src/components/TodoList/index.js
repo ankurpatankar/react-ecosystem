@@ -5,6 +5,8 @@ import TodoListItem from "../../components/TodoListItem";
 import TodoForm from "../../forms/TodoForm";
 import './styles.css';
 
+import { displayAlert } from '../../store/thunks';
+
 const TodoList = ({ todos = [], onRemovePressed, onCompletedPressed }) => (
     <div className="todo-list-container">
         <TodoForm />
@@ -30,6 +32,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
     onRemovePressed: text => dispatch(removeTodo(text)),
     onCompletedPressed: text => dispatch(markTodoCompleted(text)),
+    onDisplayAlertClicked: text => dispatch(displayAlert(text)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
