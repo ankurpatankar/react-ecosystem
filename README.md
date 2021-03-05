@@ -14,3 +14,14 @@ Reducers - Specifies what happens to redux store state when an action occurs usi
 ## Redux Persist
 
 npm package `redux-persist` helps persist data stored into redux store across refreshes
+
+## Redux best practices
+
+-   Export both
+
+*   Connected version of the component (as default export to be used by the rest of the application)
+*   Unconnected version of the component (as a named export to be used by unit tests in order to avoid setting up a fake store)
+
+-   Never trigger any other actions or async operations to get data from an API inside your reducers. Reducers are only meant to give a new state based on an action and the current state of the store
+
+-   Think before connecting a component to the redux store since it makes components less reusable

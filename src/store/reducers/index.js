@@ -1,4 +1,4 @@
-import { CREATE_TODO, REMOVE_TODO } from '../actions';
+import { CREATE_TODO, REMOVE_TODO, MARK_TODO_COMPLETED } from '../actions';
 
 // every time an action is called in our app the reducer gets called
 // Params would be current state and action that was triggered and decide what changes in state should occur
@@ -19,6 +19,13 @@ export const todos = (state = [], action) => {
         case REMOVE_TODO: {
             const { text } = payload;
             return state.filter(todo => todo.text !== text);
+        }
+        case MARK_TODO_COMPLETED: {
+            const { text } = payload;
+            return state.map(todo => ({
+                ...todo,
+                ...(todo.text === text && { isCompleted: true }),
+            }))
         }
 
         default:
