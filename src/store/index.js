@@ -21,4 +21,8 @@ const rootReducer = combineReducers(reducers);
 
 const persistedReducer = persistReducer(persistConfig, rootReducer );
 
-export const configureStore = () => createStore(persistedReducer);
+export const configureStore = () => createStore(
+        persistedReducer,
+        window.__REDUX_DEVTOOLS_EXTENSION__ &&
+        window.__REDUX_DEVTOOLS_EXTENSION__() // connects redux store to the redux devtools extension
+    );
