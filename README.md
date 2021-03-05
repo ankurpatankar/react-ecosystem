@@ -10,3 +10,7 @@ Reducers - Specifies what happens to redux store state when an action occurs usi
 
 -   Only allow actions that are explicitly defined
 -   Only allow changes based on a preexisting definition present in the reducers
+
+## Redux Persist
+
+npm package `redux-persist` helps persist data stored into redux store across refreshes
