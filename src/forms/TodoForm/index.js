@@ -3,11 +3,13 @@ import React, { useState } from 'react';
 // connect()(Component_to_Connect)
 // it returns connected version of the component
 import { connect } from 'react-redux';
-import { createTodo } from '../../store/actions';
+// import { createTodo } from '../../store/actions';
+import { addTodoRequest } from '../../store/thunks';
 import './styles.css';
 
 const TodoForm = ({ todos, onCreatePressed }) => {
     const [inputValue, setInputValue] = useState('');
+
     return (
         <div className="todo-form">
             <input
@@ -41,7 +43,7 @@ const mapStateToProps = state => ({
 
 // dispatch param is a function that allows this component to trigger actions that redux store responds to
 const mapDispatchToProps = dispatch => ({
-    onCreatePressed: text => dispatch(createTodo(text)), // Creates a proper action object for us
+    onCreatePressed: text => dispatch(addTodoRequest(text)), // Creates a proper action object for us
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoForm);

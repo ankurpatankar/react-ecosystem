@@ -45,7 +45,7 @@ Component -> Thunk Action -> Thunk -> Redux Action -> Reducer -> Store
 
 `npm install redux-thunk redux-devtools-extension @babel/runtime`
 
-redux-devtools-extension - Using to add thunk middleware to redux store
+redux-devtools-extension - Used to add thunk middleware to redux store
 
 @babel/runtime - makes async thunks work
 
