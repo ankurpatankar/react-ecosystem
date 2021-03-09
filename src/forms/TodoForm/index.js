@@ -7,6 +7,8 @@ import { connect } from 'react-redux';
 import { addTodoRequest } from '../../store/thunks';
 import './styles.css';
 
+import { getTodos } from '../../components/selectors';
+
 const TodoForm = ({ todos, onCreatePressed }) => {
     const [inputValue, setInputValue] = useState('');
 
@@ -38,7 +40,7 @@ const TodoForm = ({ todos, onCreatePressed }) => {
 // Entire redux state gets passed here in state param
 // This returns pieces of the state that this component needs access to
 const mapStateToProps = state => ({
-    todos: state.todos,
+    todos: getTodos(state),
 });
 
 // dispatch param is a function that allows this component to trigger actions that redux store responds to

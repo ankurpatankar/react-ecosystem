@@ -50,3 +50,11 @@ redux-devtools-extension - Used to add thunk middleware to redux store
 @babel/runtime - makes async thunks work
 
 `@babel/plugin-transform-runtime` development version of @babel/runtime
+
+## Selectors
+
+Selectors give us a place to put logic for transforming data in the store into data our components can use
+The selectors can be used in mapStateToProps to get the right data for example:
+
+-   getCompletedTodos
+-   getIncompleteTodos

@@ -1,5 +1,5 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { todos, isLoading } from './reducers';
+import { todos } from './reducers';
 
 // persist reducer lets us persist data across sessions / refreshes
 import { persistReducer } from "redux-persist";
@@ -11,7 +11,6 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 const reducers = {
     todos,
-    isLoading,
 };
 
 // How to save and where to save the reducer data

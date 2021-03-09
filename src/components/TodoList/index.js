@@ -11,6 +11,8 @@ import {
     markTodoAsCompletedRequest,
 } from '../../store/thunks';
 
+import { getTodos, getTodosLoading } from "../../components/selectors";
+
 const TodoList = ({ todos = [], onRemovePressed, onCompletedPressed, isLoading, startLoadingTodos }) => {
     useEffect(() => {
         startLoadingTodos();
@@ -43,8 +45,8 @@ const TodoList = ({ todos = [], onRemovePressed, onCompletedPressed, isLoading, 
 };
 
 const mapStateToProps = state => ({
-    todos: state.todos,
-    isLoading: state.isLoading,
+    todos: getTodos(state),
+    isLoading: getTodosLoading(state),
 });
 
 const mapDispatchToProps = dispatch => ({
