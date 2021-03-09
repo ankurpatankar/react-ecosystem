@@ -58,3 +58,16 @@ The selectors can be used in mapStateToProps to get the right data for example:
 
 -   getCompletedTodos
 -   getIncompleteTodos
+
+# Reselect
+
+`npm install reselect`
+
+Allows us to use simpler selector to get more complex data or combine simple selectors to form a more complex selector
+
+Lower order selectors are aware of the internal state storage within the redux store
+Higher order selectors depend on lower order selectors and are unaware of how data is stored in redux store
+
+`import { createSelector } from 'reselect';`
+
+createSelector from the reselect library handles data through memoization. This means that it recomputes data only when the input data changes. If the underlying data does not change it remembers the result of the last computation and returns that value the next time the higher order selector is called.
