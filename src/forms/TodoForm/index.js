@@ -5,24 +5,58 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 // import { createTodo } from '../../store/actions';
 import { addTodoRequest } from '../../store/thunks';
-import './styles.css';
+// import './styles.css'; // Not needed now with styled components
 
 import { getTodos } from '../../components/selectors';
+
+import styled from 'styled-components';
+
+const FormContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 8px grey;
+    justify-content: center;
+`;
+const TodoInput = styled.input`
+    font-size: 16px;
+    padding: 8px;
+    margin: 8px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    width: 70%;
+    outline: none;
+`;
+const CreateButton = styled.button`
+    font-size: 16px;
+    padding: 8px;
+    margin: 8px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    margin-left: 8px;
+    width: 20%;
+    background-color: #22ee22;
+`;
 
 const TodoForm = ({ todos, onCreatePressed }) => {
     const [inputValue, setInputValue] = useState('');
 
     return (
-        <div className="todo-form">
-            <input
+        <FormContainer
+            // className="todo-form" // Not needed now with styled components
+        >
+            <TodoInput
                 type="text"
-                className="todo-input"
+                // className="todo-input" // Not needed now with styled components
                 placeholder="Type your new todo here"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
             />
-            <button
-                className="create-button"
+            <CreateButton
+                // className="create-button" // Not needed now with styled components
                 onClick={() => {
                     const isDuplicateTodo = todos.some(todo => todo.text === inputValue);
                     if (!isDuplicateTodo) {
@@ -32,8 +66,8 @@ const TodoForm = ({ todos, onCreatePressed }) => {
                 }}
             >
                 Create a Todo
-            </button>
-        </div>
+            </CreateButton>
+        </FormContainer>
     );
 };
 

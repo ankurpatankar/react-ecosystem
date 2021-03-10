@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from 'react-redux';
 import TodoListItem from "../../components/TodoListItem";
 import TodoForm from "../../forms/TodoForm";
-import './styles.css';
+// import './styles.css'; // Not needed now with styled components
 
 import {
     displayAlert,
@@ -29,6 +29,13 @@ const GreenHeading = styled.h3`
     font-size: 32px;
     color: #00FF00;
 `;
+const TodoListContainer = styled.div`
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    max-width: 700px;
+    margin: auto;
+`;
 
 const TodoList = ({
     // todos = [],
@@ -45,12 +52,16 @@ const TodoList = ({
 
     if (isLoading) {
         return (
-            <div>Loading...</div>
+            <TodoListContainer>
+                <div>Loading...</div>
+            </TodoListContainer>
         );
     }
 
     return (
-        <div className="todo-list-container">
+        <TodoListContainer
+            // className="todo-list-container" // Not needed now with styled components
+        >
             <TodoForm />
             <RedHeading>Incomplete TODOs</RedHeading>
             {incompleteTodos.map(
@@ -77,7 +88,7 @@ const TodoList = ({
             {incompleteTodos.length === 0 && completedTodos.length === 0 && (
                 <h3>No Todos added yet</h3>
             )}
-        </div>
+        </TodoListContainer>
     );
 };
 
