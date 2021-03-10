@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "npx webpack serve --mode development",
         "build": "npx webpack --mode development",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "mocha \"src/**/*spec.js\" --require @babel/register --recursive"
     },
     "keywords": [],
     "author": "",
@@ -16,8 +16,11 @@
         "@babel/core": "^7.13.8",
         "@babel/preset-env": "^7.13.9",
         "@babel/preset-react": "^7.12.13",
+        "@babel/register": "^7.13.8",
         "babel-loader": "^8.2.2",
+        "chai": "^4.3.3",
         "css-loader": "^5.1.1",
+        "mocha": "^8.3.1",
         "react-hot-loader": "^4.13.0",
         "style-loader": "^2.0.0",
         "webpack": "^5.24.3",
