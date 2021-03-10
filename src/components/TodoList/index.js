@@ -18,6 +18,18 @@ import {
     getIncompleteTodos,
 } from "../../components/selectors";
 
+import styled from 'styled-components';
+
+// BigRedText and BigGreenText are what are called as styled components
+const RedHeading = styled.h3`
+    font-size: 32px;
+    color: #FF0000;
+`;
+const GreenHeading = styled.h3`
+    font-size: 32px;
+    color: #00FF00;
+`;
+
 const TodoList = ({
     // todos = [],
     onRemovePressed,
@@ -40,7 +52,7 @@ const TodoList = ({
     return (
         <div className="todo-list-container">
             <TodoForm />
-            <h3>Incomplete TODOs</h3>
+            <RedHeading>Incomplete TODOs</RedHeading>
             {incompleteTodos.map(
                 todo => (
                     <TodoListItem
@@ -51,7 +63,7 @@ const TodoList = ({
                     />
                 )
             )}
-            <h3>Completed TODOs</h3>
+            <GreenHeading>Completed TODOs</GreenHeading>
             {completedTodos.map(
                 todo => (
                     <TodoListItem

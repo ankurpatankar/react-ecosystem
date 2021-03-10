@@ -26,14 +26,14 @@ npm package `redux-persist` helps persist data stored into redux store across re
 
 -   Think before connecting a component to the redux store since it makes components less reusable
 
-## Side effect libraries
+### Side effect libraries
 
 Give us a way to separate side effects logic
 
 -   redux-thunk
 -   redux-saga
 
-# Redux Thunk
+## Redux Thunk
 
 It provides a layer between the component and reducers
 
@@ -59,7 +59,7 @@ The selectors can be used in mapStateToProps to get the right data for example:
 -   getCompletedTodos
 -   getIncompleteTodos
 
-# Reselect
+## Reselect
 
 `npm install reselect`
 
@@ -71,3 +71,24 @@ Higher order selectors depend on lower order selectors and are unaware of how da
 `import { createSelector } from 'reselect';`
 
 createSelector from the reselect library handles data through memoization. This means that it recomputes data only when the input data changes. If the underlying data does not change it remembers the result of the last computation and returns that value the next time the higher order selector is called.
+
+### Styled Components
+
+Styled component are CSS in JavaScript which allows us to define styling for components inside javascript files
+Allows us to define our own UI components we can pass props to (i.e. pass selected and decide style rather than passing className based on conditions)
+
+`npm install styled-components`
+
+Example:
+
+```
+import styled from 'styled-components';
+
+// The "`" are what are called as tagged functions
+const BigRedText = styled.div`
+    font-size: 48px;
+    color: #FF0000;
+`;
+
+<BigRedText>I am a Styled Component</BigRedText>
+```
