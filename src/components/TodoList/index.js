@@ -21,12 +21,13 @@ import {
 import styled from 'styled-components';
 
 // BigRedText and BigGreenText are what are called as styled components
-const RedHeading = styled.h3`
+const Heading = styled.h3`
     font-size: 32px;
+`;
+const RedHeading = styled(Heading)`
     color: #FF0000;
 `;
-const GreenHeading = styled.h3`
-    font-size: 32px;
+const GreenHeading = styled(Heading)`
     color: #00FF00;
 `;
 const TodoListContainer = styled.div`
