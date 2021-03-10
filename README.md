@@ -92,3 +92,35 @@ const BigRedText = styled.div`
 
 <BigRedText>I am a Styled Component</BigRedText>
 ```
+
+### Testing ReactJS components
+
+We will be using mocha and chai for testing
+`npm install --save-dev mocha chai @babel/register`
+
+## Testing reducers
+
+This only requires us to define initial state and an action
+
+## Testing thunks
+
+We will need to install a few more packages
+`npm install --save-dev sinon node-fetch fetch-mock`
+
+sinon helps create a fake function that we can pass in that keeps track of what arguments it was called with
+node-fetch and fetch-mock provide a way to mock API requests
+
+When testing thunks make sure of the following 2 things
+
+-   Thunk dispatches correct actions at the right times
+-   Thunks make the correct external requests
+
+## Testing selectors
+
+This only requires us to define the relevant parts of the state
+
+The `reselect` library provides for the selectors created using createSelector with a prop called resultFunc which refers to the last function we passed to the createSelector. That way we don't have to recreate the whole state.
+
+## Testing styled components
+
+Only test the logic within those components by exporting the logic as a function
